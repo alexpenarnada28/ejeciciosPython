@@ -31,9 +31,9 @@ while continuar:
 
      
      # Bloque que me permite cerrar el ciclo.
-    repuesta = input("Desea realizar otra transacion? (si/no):")
-    if repuesta.lower() == "no":
-        continuar = False
+    continuar = input("Desea realizar otra transacion? (si/no): ").lower() == "si"
+   
+         
 
 print("El monto disponible en su cuenta es: ", saldo_bancario_disponible)
 print("Retiros exitosos ",retiros_exitosos)
