@@ -1,8 +1,11 @@
 
 
 saldo_bancario_disponible  = 250000
-continuar = True
 retiros_exitosos = 0
+continuar = input("¿Desea realizar una transacción? (si/no): ").lower() == "si"
+
+
+
 
 # Continúa con la ejecución del programa utilizando los datos ingresados por el usuario.
 while continuar:
@@ -15,10 +18,10 @@ while continuar:
             # El monto del retiro está entre 5000 y 100000; se comprueba que el saldo de la cuenta sea suficiente. 
             repuesta = input(f"¿Desea continuar con el retiro de {monto_retiro_bancario}? (sí/no):")
             if repuesta.lower() == "si":
-                saldo_total_disponible = saldo_bancario_disponible - monto_retiro_bancario 
+                saldo_bancario_disponible = saldo_bancario_disponible - monto_retiro_bancario 
                 retiros_exitosos = retiros_exitosos + 1
                 print("Retiro exitoso.")
-                print(f"El saldo de su cuenta actualmente es de: {saldo_total_disponible}")
+                print(f"El saldo de su cuenta actualmente es de: {saldo_bancario_disponible}")
             else:
                 print("Retiro cancelado. ")
         else:
@@ -32,7 +35,7 @@ while continuar:
     if repuesta.lower() == "no":
         continuar = False
 
-print("El monto disponible en su cuenta es: ", saldo_total_disponible)
+print("El monto disponible en su cuenta es: ", saldo_bancario_disponible)
 print("Retiros exitosos ",retiros_exitosos)
 print("Gracias por el retiro. ")
 
