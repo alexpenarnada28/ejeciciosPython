@@ -24,10 +24,10 @@ while continuar and saldo_bancario_disponible > 0:
 
     monto_retiro_bancario = float(input("Ingrese el monto que desea realizar: "))
     
-    if (monto_retiro_bancario >= 5000) and (monto_retiro_bancario <= 100000):
+    if (monto_retiro_bancario >= MONTO_MINIMO) and (monto_retiro_bancario <= MONTO_MAXIMO):
         if(monto_retiro_bancario <= saldo_bancario_disponible):
 
-            # El monto del retiro está entre 5000 y 100000; se comprueba que el saldo de la cuenta sea suficiente. 
+            # El monto del retiro está entre MONTO_MINIMO y MONTO_MAXIMO; se comprueba que el saldo de la cuenta sea suficiente. 
             
             repuesta = input(f"¿Desea continuar con el retiro de {monto_retiro_bancario}? (sí/no):")
             if repuesta.lower() == "si":
@@ -48,7 +48,7 @@ while continuar and saldo_bancario_disponible > 0:
     continuar = input("Desea realizar otra transacion? (si/no): ").lower() == "si"
    
 
-# Salida final del prgrama.   
+# Salida final del programa.   
 
 print("El monto disponible en su cuenta es: ", saldo_bancario_disponible)
 print("Retiros exitosos ",retiros_exitosos)
